@@ -762,8 +762,8 @@
             </div>
             <center>
               <div style="text-align: center; margin-top: 20px;" id="btn-ppdb">
-                <button onclick="printForm()" class="btn btn-primary print-button">Cetak Formulir</button>
-                <button onclick="" class="btn btn-secondary print-button">Isi Ulang Form</button>
+                <button onclick="printForm()" class="btn btn-primary">Cetak Formulir</button>
+                <button onclick="resetForm()" class="btn btn-secondary">Isi Ulang Form</button>
               </div>            
             </center>
           </form>
@@ -914,7 +914,9 @@
       function printForm() {
           window.print();
       }
-
+      function resetForm() {
+      document.getElementById('form').reset();
+      }
       function saveFormAsPDF() {
           html2canvas(document.getElementById("form")).then(canvas => {
               const imgData = canvas.toDataURL("image/png");
